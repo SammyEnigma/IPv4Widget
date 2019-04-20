@@ -52,7 +52,6 @@ QIPv4Edit::QIPv4Edit(QWidget *parent) : QWidget(parent)
  * \verbatim
  * \endverbatim
  *****************************************************************************/
-
 void QIPv4Edit::setIpv4Address(QString &ipv4Address)
 {
       if(ipv4Address != m_ip4Address)
@@ -73,7 +72,6 @@ void QIPv4Edit::setIpv4Address(QString &ipv4Address)
  * \verbatim
  * \endverbatim
  *****************************************************************************/
-
 QString QIPv4Edit::getIp4Address() const
 {
    return m_ip4Address;
@@ -108,5 +106,3 @@ void QIPv4Edit::slotUpdateIpAddress()
    // setIP address
    setIpv4Address(ipv4Address);
 }
-
-
