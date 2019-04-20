@@ -111,7 +111,8 @@ bool QIPv4Edit::isEditReallyFinished(const QString &ipv4Address) const
  *****************************************************************************/
 void QIPv4Edit::slotUpdateIpv4Address()
 {
-   QString ipv4Address;
+   // assign Invalid IPv4 Address
+   QString ipv4Address("999.999.999.999");
    int index = 0;
    foreach(QChar octet, pLineEditIPv4->text() )
    {
