@@ -29,6 +29,7 @@ public:
     explicit QIPv4Edit(QWidget *parent = 0);
     void setIpv4Address(QString &ipv4Address);
     QString getIpv4Address() const;
+    bool isEditReallyFinished(const QString ipv4Address) const;
 
 signals:
     /* Application can connect to this signal in order to know whether data

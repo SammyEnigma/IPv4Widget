@@ -11,6 +11,7 @@
  * transferred to any third party without the prior written permission of author.
  *
  ******************************************************************************/
+#include <QHostAddress>
 #include "qipv4edit.h"
 
 /******************************************************************************/
@@ -74,7 +75,31 @@ void QIPv4Edit::setIpv4Address(QString &ipv4Address)
  *****************************************************************************/
 QString QIPv4Edit::getIpv4Address() const
 {
-   return m_ipv4Address;
+    return m_ipv4Address;
+}
+
+/******************************************************************************/
+/* \fn  isEditReallyFinished
+ *
+ * \param ipv4Address - QString
+ *
+ * \return True if the editing is finished and not accidentally enter button is pressed
+ *
+ * \brief This checks whether the editing is finished or not by checking if the IP address is valid.
+ * \verbatim
+ * \endverbatim
+ *****************************************************************************/
+bool QIPv4Edit::isEditReallyFinished(const QString ipv4Address) const
+{
+    QHostAddress addr;
+    if (addr.setAddress(ipv4Address))
+    {
+       return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 /******************************************************************************/
@@ -104,5 +129,8 @@ void QIPv4Edit::slotUpdateIpv4Address()
        }
    }
    // setIP address
-   setIpv4Address(ipv4Address);
+   if(isEditReallyFinished(ipv4Address))
+   {
+       setIpv4Address(ipv4Address);
+   }
 }
