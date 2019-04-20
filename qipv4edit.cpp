@@ -34,11 +34,11 @@ QIPv4Edit::QIPv4Edit(QWidget *parent) : QWidget(parent)
     pLayout->setMargin(0);
     pLineEditIPv4 = new QLineEdit(this);
     pLineEditIPv4->setInputMask( "000.000.000.000" );
-    pIpValidator = new QIPv4AddressValidator(this);
-    pLineEditIPv4->setValidator(pIpValidator);
+    pIpv4Validator = new QIPv4AddressValidator(this);
+    pLineEditIPv4->setValidator(pIpv4Validator);
     pLineEditIPv4->setCursorPosition(0);
     pLayout->addWidget(pLineEditIPv4);
-    QObject::connect(pLineEditIPv4, SIGNAL(editingFinished()), this, SLOT(slotUpdateIpAddress()));
+    QObject::connect(pLineEditIPv4, SIGNAL(editingFinished()), this, SLOT(slotUpdateIpv4Address()));
 }
 
 /******************************************************************************/
@@ -54,15 +54,15 @@ QIPv4Edit::QIPv4Edit(QWidget *parent) : QWidget(parent)
  *****************************************************************************/
 void QIPv4Edit::setIpv4Address(QString &ipv4Address)
 {
-      if(ipv4Address != m_ip4Address)
+      if(ipv4Address != m_ipv4Address)
       {
-          m_ip4Address = ipv4Address;
-          emit signalIp4AddressChanged();
+          m_ipv4Address = ipv4Address;
+          emit signalIpv4AddressChanged();
       }
 }
 
 /******************************************************************************/
-/* \fn  getIp4Address
+/* \fn  getIpv4Address
  *
  * \param None
  *
@@ -72,13 +72,13 @@ void QIPv4Edit::setIpv4Address(QString &ipv4Address)
  * \verbatim
  * \endverbatim
  *****************************************************************************/
-QString QIPv4Edit::getIp4Address() const
+QString QIPv4Edit::getIpv4Address() const
 {
-   return m_ip4Address;
+   return m_ipv4Address;
 }
 
 /******************************************************************************/
-/* \fn  slotUpdateIpAddress
+/* \fn  slotUpdateIpv4Address
  *
  * \param ipv4address to set
  *
@@ -91,7 +91,7 @@ QString QIPv4Edit::getIp4Address() const
  * \verbatim
  * \endverbatim
  *****************************************************************************/
-void QIPv4Edit::slotUpdateIpAddress()
+void QIPv4Edit::slotUpdateIpv4Address()
 {
    QString ipv4Address;
    int index = 0;

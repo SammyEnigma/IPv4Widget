@@ -109,12 +109,10 @@ QValidator::State QIPv4AddressValidator::validate(QString &input, int &pos) cons
                             hundredsplaceVal = -1;
                         }
                     }
-
                     if(input.at(prev_cursor_pos-2).isDigit() && hundredsplaceVal != -1)
                     {
                         hundredsplaceVal = input.at(prev_cursor_pos-2).digitValue() * 100;
                     }
-
                     int number = hundredsplaceVal + tensplaceVal + digit;
                     if( number < 0 || number > 255)
                     {

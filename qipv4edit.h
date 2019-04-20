@@ -23,28 +23,28 @@
 class QIPv4Edit : public QWidget
 {
     Q_OBJECT
-    Q_PROPERTY(QString getIp4Address READ getIp4Address WRITE setIpv4Address NOTIFY signalIp4AddressChanged)
+    Q_PROPERTY(QString getIpv4Address READ getIpv4Address WRITE setIpv4Address NOTIFY signalIpv4AddressChanged)
 public:
     /* explicit to avoid any implicit type conversion **/
     explicit QIPv4Edit(QWidget *parent = 0);
     void setIpv4Address(QString &ipv4Address);
-    QString getIp4Address() const;
+    QString getIpv4Address() const;
 
 signals:
     /* Application can connect to this signal in order to know whether data
      is ready or not **/
-    void signalIp4AddressChanged();
+    void signalIpv4AddressChanged();
 
 public slots:
     /* When the editing is finished this will be triggered **/
-    void slotUpdateIpAddress();
+    void slotUpdateIpv4Address();
 
 private:
     // TBD - use smart pointers instead of traditional once using more modern compiler.
     QHBoxLayout *pLayout;
     QLineEdit *pLineEditIPv4;
-    QIPv4AddressValidator *pIpValidator;
-    QString m_ip4Address;
+    QIPv4AddressValidator *pIpv4Validator;
+    QString m_ipv4Address;
 };
 
 #endif // QIPV4EDIT_H
