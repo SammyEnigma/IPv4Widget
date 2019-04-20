@@ -89,7 +89,7 @@ QString QIPv4Edit::getIpv4Address() const
  * \verbatim
  * \endverbatim
  *****************************************************************************/
-bool QIPv4Edit::isEditReallyFinished(const QString ipv4Address) const
+bool QIPv4Edit::isEditReallyFinished(const QString &ipv4Address) const
 {
     QHostAddress addr;
     return addr.setAddress(ipv4Address);
