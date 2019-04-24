@@ -27,6 +27,7 @@ class QIPv4Edit : public QWidget
 public:
     /* explicit to avoid any implicit type conversion **/
     explicit QIPv4Edit(QWidget *parent = 0);
+    ~QIPv4Edit();
     void setIpv4Address(QString &ipv4Address);
     QString getIpv4Address() const;
     bool isEditReallyFinished(const QString &ipv4Address) const;

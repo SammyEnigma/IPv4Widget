@@ -47,6 +47,24 @@ QIPv4Edit::QIPv4Edit(QWidget *parent) : QWidget(parent)
     QObject::connect(pLineEditIPv4, SIGNAL(editingFinished()), this, SLOT(slotUpdateIpv4Address()));
 }
 
+
+/******************************************************************************/
+/* \fn  ~QIPv4Edit
+ *
+ * \param none
+ *
+ * \return This is the destructor of QIPv4Edit;
+ *
+ * \brief - This deletes the pIpv4Validator
+ *
+ * \verbatim
+ * \endverbatim
+ *****************************************************************************/
+QIPv4Edit::~QIPv4Edit()
+{
+    delete pIpv4Validator;
+}
+
 /******************************************************************************/
 /* \fn  setIpv4Address
  *
