@@ -15,10 +15,10 @@
 #define QIPV4EDIT_H
 
 #include <QWidget>
-#include "QHBoxLayout"
-#include "QLineEdit"
 
-#include "qipv4addressvalidator.h"
+class QHBoxLayout;
+class QLineEdit;
+class QIPv4AddressValidator;
 
 class QIPv4Edit : public QWidget
 {

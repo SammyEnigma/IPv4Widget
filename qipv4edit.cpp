@@ -12,7 +12,12 @@
  *
  ******************************************************************************/
 #include <QHostAddress>
+#include <QHBoxLayout>
+#include <QLineEdit>
+
+#include "qipv4addressvalidator.h"
 #include "qipv4edit.h"
+
 
 /******************************************************************************/
 /* \fn  QIPv4Edit
